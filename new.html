@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fast Food</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<style>
+   body{
+    background-color:#2f2f2f;
+}
+
+.navbar{
+    background:#ff5a5a;
+}
+
+.food-card{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.food-card img{
+    height:230px;             
+    width:100%;
+    object-fit:cover;
+    display:block;
+    margin:auto;               
+    transition: transform 0.4s ease;
+}
+
+
+.food-card:hover img{
+    transform: rotate(3deg) scale(1.05);
+}
+
+
+.food-card:hover{
+    transform: translateY(-5px);
+}
+
+.add-cart{
+    background:#aaff2f;
+    border:none;
+    width:70px;
+    height:70px;
+    border-radius:0 0 20px 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    
+}
+.add-cart:hover{
+    background:red;
+}
+
+.price{
+    font-weight:600;
+}
+.offcanvas-end{
+width:420px !important;   
+}
+
+.offcanvas-title{
+font-size:28px;
+}
+
+#cartItems li{
+font-size:18px;
+padding:12px;
+}
+
+#cartTotal{
+font-size:30px;
+}
+
+.offcanvas-body button{
+font-size:18px;
+}
+
+.cart-img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar fixed-top p-3">
+    <div class="container-fluid">
+        <span class="navbar-brand text-white fw-bold fs-3">
+            🍔 FAST FOOD
+        </span>
+        <i class="bi bi-cart3 text-white fs-2"
+   data-bs-toggle="offcanvas"
+   data-bs-target="#cartOffcanvas"
+   style="cursor:pointer;"></i>
+    </div>
+    
+</nav>
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">🛒 Your Cart</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+<ul id="cartItems" class="list-group mb-3"></ul>
+
+<hr>
+
+<div class="d-flex justify-content-between fw-bold fs-5">
+<span class="fs-2">Total</span>
+<span id="cartTotal">Rs.0</span>
+</div>
+
+<button class="btn btn-success w-50 p-3 mt-3 border border-0 0 20px 0 fs-4">
+Order
+</button>
+
+</div>
+
+</div>
+
+
+<div class="container mt-5 pt-5">
+    <h1 class="text-white fw-bold mb-4">Discover the Best Food</h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+    
+        <div class="col">
+            <div class="card food-card">
+                <img src="download.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title  fs-3">Veg Role</h5>
+                    <p class="price fs-4">Rs.50</p>
+                    <button class="add-cart position-absolute bottom-0 end-0  ">
+                        <i class="bi bi-cart fs-3 "></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card food-card">
+                <img src="Buck's Chicken Lollipops.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Chicken Lolipop</h5>
+                    <p class="price fs-4">Rs.150</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card food-card">
+                <img src="chicken.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Chicken Noodles</h5>
+                    <p class="price fs-4">Rs.250</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card food-card">
+                <img src="Sprout Salad Recipe (Mung Bean Sprout Salad)  - Fun FOOD Frolic.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Veg Snacks</h5>
+                    <p class="price fs-4">Rs.40</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Curd Rice.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Curd rice</h5>
+                    <p class="price fs-4">Rs.80</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Mutton biriyani.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Mutton Biriyani</h5>
+                    <p class="price fs-4">Rs.90</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="non veg.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Non-Veg Lunch</h5>
+                    <p class="price fs-4">Rs.430</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Snack Ideas Crispy Air Fried Potato Chips Recipe.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Snacks</h5>
+                    <p class="price fs-4">Rs.50</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Chicken Tikka Gravy.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Chicken Gravey</h5>
+                    <p class="price fs-4">Rs.90</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Hershey Chocolate Cake Recipe.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Chocolate Cake</h5>
+                    <p class="price fs-4">Rs.80</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="South Indian Feast_ A Flavorsome Culinary Delight on Banana Leaves.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Meals</h5>
+                    <p class="price fs-4">Rs.150</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="chick.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Chicken 65</h5>
+                    <p class="price fs-4">Rs.250</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Paneer Biryani.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Paneer Biriyani</h5>
+                    <p class="price fs-4">Rs.200</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Naan.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Garlic Naan</h5>
+                    <p class="price fs-4">Rs.100</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="Try Pesarattu, Andhra Pradesh's Healthy Breakfast; Recipe Inside.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Pesarattu</h5>
+                    <p class="price fs-4">Rs.70</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card food-card">
+                <img src="pootharekulu.jpeg" class="card-img-top">
+                <div class="card-body position-relative">
+                    <h5 class="card-title fs-3">Pootharekulu</h5>
+                    <p class="price fs-4">Rs.90</p>
+                    <button class="add-cart position-absolute bottom-0 end-0">
+                        <i class="bi bi-cart fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="shopping.js"></script>
+
+
+</body>
+</html>
